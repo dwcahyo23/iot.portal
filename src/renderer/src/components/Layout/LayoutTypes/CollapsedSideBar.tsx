@@ -1,4 +1,4 @@
-import { Center, Stack } from '@mantine/core'
+import { AppShell, Center, Stack, rem } from '@mantine/core'
 import CollapsedSideBarUserPopOver from '@renderer/components/UserPopOver/CollapsedSideBarUserPopOver'
 import navigationConfig from '@renderer/configs/navigation.config'
 import MantineLogo from '@renderer/favicon.svg'
@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Views from '../Views'
 import classes from './CollapsedSideBar.module.css'
+import HeaderBar from './HeaderBar'
 
 function CollapsedSideBarBottomContent() {
   const { signOut } = useAuth()
@@ -41,8 +42,12 @@ function CollapsedSideBarContent() {
     setActive(currentPath)
   }, [location.pathname])
 
-  const links = navigationConfig.map((item) => (
-    <AuthorityCheck userAuthority={userAuthority ? userAuthority : []} authority={item.authority}>
+  const links = navigationConfig.map((item, index) => (
+    <AuthorityCheck
+      key={index}
+      userAuthority={userAuthority ? userAuthority : []}
+      authority={item.authority}
+    >
       <Link
         className={classes.link}
         data-active={item.path.split('/')[1] === active ? 'true' : undefined}
@@ -69,6 +74,7 @@ function CollapsedSideBarContent() {
           {links}
         </Stack>
       </div>
+
       <CollapsedSideBarBottomContent />
     </nav>
   )
@@ -77,7 +83,22 @@ function CollapsedSideBarContent() {
 export default function CollapsedSideBar() {
   return (
     <>
-      <div
+      <AppShell
+        header={{ height: 60 }}
+        navbar={{ width: `calc(${rem(80)})`, breakpoint: 'xs' }}
+        padding="md"
+      >
+        <AppShell.Header>
+          <HeaderBar />
+        </AppShell.Header>
+        <AppShell.Navbar>
+          <CollapsedSideBarContent />
+        </AppShell.Navbar>
+        <AppShell.Main>
+          <Views />
+        </AppShell.Main>
+      </AppShell>
+      {/* <div
         style={{
           display: 'flex',
           flex: ' 1 1 auto',
@@ -96,9 +117,10 @@ export default function CollapsedSideBar() {
             overflowY: 'auto' // Allows content to scroll if it overflows
           }}
         >
+          <HeaderBar />
           <Views />
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

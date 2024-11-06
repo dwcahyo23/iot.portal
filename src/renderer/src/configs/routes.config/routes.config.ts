@@ -6,33 +6,33 @@ export const publicRoutes: Routes = [...authRoute]
 
 export const protectedRoutes = [
   {
-    key: 'dashboard',
-    path: '/dashboard',
-    component: lazy(() => import('@renderer/pages/example/Dashboard')),
+    key: 'portal',
+    path: '/portal',
+    component: lazy(() => import('@renderer/pages/portal/Portal')),
     authority: []
   },
   {
-    key: 'users',
-    path: '/users',
-    component: lazy(() => import('@renderer/pages/example/Users')),
+    key: 'apq-dashboard',
+    path: '/app/apq/dashboard',
+    component: lazy(() => import('@renderer/pages/apq/DashboardAPQ')),
     authority: []
   },
   {
-    key: 'pages',
-    path: '/dashboard/pages',
-    component: lazy(() => import('@renderer/pages/example/Pages')),
+    key: 'apq-upload',
+    path: '/app/apq/upload',
+    component: lazy(() => import('@renderer/pages/apq/UploadApq')),
     authority: []
   },
   {
-    key: 'files',
-    path: '/dashboard/files',
-    component: lazy(() => import('@renderer/pages/example/Files')),
+    key: 'tools-table',
+    path: '/app/tools/table',
+    component: lazy(() => import('@renderer/pages/tool-usage/TableTools')),
     authority: []
   },
   {
-    key: 'manage',
-    path: '/users/manage',
-    component: lazy(() => import('@renderer/pages/example/Manage')),
+    key: 'qsense-quality-guard',
+    path: '/app/qsense/quality/guard',
+    component: lazy(() => import('@renderer/pages/qsense/QualityGuard')),
     authority: []
   }
 ]

@@ -8,7 +8,7 @@
   ],
   "compilerOptions": {
     "noUnusedLocals": false,
-    "types": ["node"],
+    "types": ["node", "vite/client"],
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -31,6 +31,9 @@
     "paths": {
       "@renderer/*": [
         "src/renderer/src/*"
+      ],
+      "@renderer/types/*": [
+        "./src/renderer/src/types/*"
       ]
     }
   }

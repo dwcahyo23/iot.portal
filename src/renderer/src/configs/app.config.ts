@@ -11,10 +11,10 @@ export type AppConfig = {
 
 const appConfig: AppConfig = {
   layoutType: LayoutTypes.CollapsedSideBar,
-  apiPrefix: '',
-  authenticatedEntryPath: '/dashboard',
+  apiPrefix: import.meta.env.VITE_API_URL,
+  authenticatedEntryPath: '/portal',
   unAuthenticatedEntryPath: '/sign-in',
-  enableMock: true,
+  enableMock: false,
   locale: 'en'
 }
 

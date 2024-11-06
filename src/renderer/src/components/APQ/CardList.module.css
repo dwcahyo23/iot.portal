@@ -1,0 +1,35 @@
+.cardListContainer {
+	width: 100%;
+	height: calc(600px - 60px);
+
+	/* Adjusting height to fit the container */
+	overflow: hidden;
+
+	/* Prevent scrollbar */
+	position: relative;
+}
+
+.cardList {
+	display: flex;
+	flex-direction: column;
+
+	/* Arrange cards vertically */
+}
+
+.cardComponent {
+	height: 120px;
+
+	/* Consistent height for each card */
+}
+
+@keyframes moveDown {
+	0% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(-100%);
+
+		/* Adjust this value based on the total height of duplicated data */
+	}
+}

@@ -1,7 +1,10 @@
 import { MantineProvider } from '@mantine/core'
 import '@mantine/core/styles.css'
 import '@mantine/dates/styles.css'
+import '@mantine/dropzone/styles.css'
+import { Notifications } from '@mantine/notifications'
 import '@mantine/notifications/styles.css'
+import 'mantine-react-table/styles.css' //import MRT styles
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
@@ -16,6 +19,7 @@ export default function App() {
 
   return (
     <MantineProvider>
+      <Notifications />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter>

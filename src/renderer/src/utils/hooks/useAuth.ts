@@ -33,22 +33,21 @@ function useAuth() {
     | undefined
   > => {
     try {
-      const resp = await AuthService.signIn(values.email, values.password)
-      dispatch(setUserId(resp.id))
-      const { access_token, id, email, fullName, phoneNumber } = resp
+      const resp = await AuthService.signIn(values.nik, values.password)
+      dispatch(setUserId(resp.user.uid))
+      const { access_token, user, refresh_token } = resp
       dispatch(
         signInSuccess({
           token: access_token,
-          refreshToken: '',
+          refreshToken: refresh_token,
           expireTime: 0
         })
       )
       dispatch(
         setUser({
-          fullName: fullName,
-          email: email,
-          role: resp.authority,
-          phoneNumber: phoneNumber
+          fullName: user.data.displayName,
+          role: user.role,
+          nik: user.uid
         })
       )
       const redirectUrl = query.get(REDIRECT_URL_KEY)

@@ -1,0 +1,40 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: var(--mantine-background);
+	margin-bottom: 16px;
+}
+
+.titleLinksContainer {
+	display: flex;
+	align-items: center;
+}
+
+.links {
+	display: flex;
+	gap: 15px;
+}
+
+.link {
+	text-decoration: none;
+	color: var(--mantine-color-blue-6);
+	font-size: 1rem;
+	transition: color 0.3s;
+}
+
+.link:hover {
+	color: var(--mantine-color-blue-7);
+}
+
+.timeGroup {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.timeGroup .mantine-Text-root {
+	font-size: 1rem;
+	color: var(--mantine-color-gray-7);
+}

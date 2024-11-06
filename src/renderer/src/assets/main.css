@@ -1,4 +1,4 @@
-@import './base.css';
+@import url('./base.css');
 
 body {
   display: flex;
@@ -75,7 +75,7 @@ code {
 .react {
   background: linear-gradient(315deg, #087ea4 55%, #7c93ee);
   background-clip: text;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
@@ -83,7 +83,7 @@ code {
 .ts {
   background: linear-gradient(315deg, #3178c6 45%, #f0dc4e);
   background-clip: text;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
@@ -152,19 +152,41 @@ code {
   }
 }
 
-@media (max-width: 720px) {
+/* Full HD media query */
+@media (width >= 1920px) {
+  .text {
+    font-size: 24px;
+
+    /* Adjust font size for larger screens */
+  }
+
+  .versions {
+    display: block;
+
+    /* Show versions on larger screens */
+  }
+
+  .tip,
+  .actions {
+    display: flex;
+
+    /* Show tip and actions on larger screens */
+  }
+}
+
+@media (width <= 720px) {
   .text {
     font-size: 20px;
   }
 }
 
-@media (max-width: 620px) {
+@media (width <= 620px) {
   .versions {
     display: none;
   }
 }
 
-@media (max-width: 350px) {
+@media (width <= 350px) {
   .tip,
   .actions {
     display: none;

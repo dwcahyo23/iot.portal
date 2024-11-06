@@ -12,6 +12,7 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import rootReducer, { AsyncReducers, RootState } from './rootReducer'
+import apiSlice from './slices/apiSlice'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -19,7 +20,7 @@ const persistConfig = {
   key: PERSIST_STORE_NAME,
   keyPrefix: '',
   storage,
-  whitelist: ['auth', 'locale']
+  whitelist: ['auth', 'locale', 'portal']
 }
 
 interface CustomStore extends Store<RootState, AnyAction> {
@@ -34,7 +35,7 @@ const store: CustomStore = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
       }
-    }),
+    }).concat(apiSlice.middleware),
   devTools: process.env.NODE_ENV === 'development'
 })
 

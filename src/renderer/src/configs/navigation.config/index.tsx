@@ -1,22 +1,13 @@
 import type { NavigationTree } from '@renderer/@types/navigation'
-import { IconDashboard, IconUser } from '@tabler/icons-react'
+import { IconHome } from '@tabler/icons-react'
 
 const navigationConfig: NavigationTree[] = [
   {
-    key: 'dashboard',
-    path: '/dashboard',
-    title: 'Dashboard',
+    key: 'Portal',
+    path: '/portal',
+    title: 'Portal',
     translateKey: '',
-    icon: IconDashboard,
-    authority: [],
-    subMenu: []
-  },
-  {
-    key: 'users',
-    path: '/users',
-    title: 'Users',
-    translateKey: '',
-    icon: IconUser,
+    icon: IconHome,
     authority: [],
     subMenu: []
   }

@@ -1,5 +1,5 @@
 export type SignInCredential = {
-  email: string
+  nik: string
   password: string
 }
 
@@ -8,12 +8,19 @@ export type ForgotPasswordReq = {
 }
 
 export interface SignInResponse {
-  id: string
-  fullName: string
-  authority: []
-  phoneNumber: string
-  email: string
+  user: SignInUser
   access_token: string
+  refresh_token: string
+}
+
+export interface SignInUser {
+  uid: string
+  role: []
+  data: DisplayName
+}
+
+interface DisplayName {
+  displayName: string
 }
 
 export interface ResponseInfoObject {

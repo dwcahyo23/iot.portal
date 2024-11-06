@@ -6,29 +6,40 @@
 	background-position: center;
 	display: flex;
 	align-items: center;
+
 	/* Vertically center the content */
 	justify-content: center;
+
 	/* Horizontally center the content */
 }
 
 .form {
 	background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
+
 	/* Set a solid background color for the card */
 	border-radius: 8px;
+
 	/* Rounded corners for a card effect */
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+
 	/* Added subtle shadow for depth */
 	padding: 40px;
+
 	/* Increased padding for a more spacious layout */
 	min-height: 400px;
+
 	/* Set a minimum height for the card */
 	max-width: 600px;
+
 	/* Maximum width for the card */
 	width: 100%;
+
 	/* Full width on small screens */
 	margin: 20px;
+
 	/* Margin for spacing from edges */
 	position: relative;
+
 	/* For potential child positioning */
 }
 
@@ -36,20 +47,26 @@
 	color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 	font-family: "Greycliff CF", var(--mantine-font-family);
 	font-size: 2rem;
+
 	/* Font size for better visibility */
 	font-weight: bold;
+
 	/* Bold title for emphasis */
 	margin-bottom: 20px;
+
 	/* Spacing below the title */
 	text-align: center;
+
 	/* Center the title text */
 }
 
 @media (max-width: var(--mantine-breakpoint-sm)) {
 	.form {
 		padding: 20px;
+
 		/* Less padding for smaller screens */
 		margin: 10px;
+
 		/* Adjust margin for smaller screens */
 	}
 }

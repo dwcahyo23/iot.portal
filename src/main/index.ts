@@ -16,6 +16,8 @@ function createWindow(): void {
     webPreferences: {
       preload: fileURLToPath(new URL('../preload/index.mjs', import.meta.url)),
       sandbox: false
+      // nodeIntegration: true,
+      // contextIsolation: false
     }
   })
 
