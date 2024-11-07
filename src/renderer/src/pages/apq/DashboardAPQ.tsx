@@ -9,7 +9,7 @@ import {
   useFetchLeadersProgressQuery,
   useFetchUsersProgressQuery,
   useFetchUsersWorstAndBestQuery
-} from './apq.api'
+} from './@apq.api'
 
 // Komponen DashboardAPQ
 const DashboardAPQ = () => {

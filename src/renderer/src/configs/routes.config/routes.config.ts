@@ -34,5 +34,19 @@ export const protectedRoutes = [
     path: '/app/qsense/quality/guard',
     component: lazy(() => import('@renderer/pages/qsense/QualityGuard')),
     authority: []
+  },
+  {
+    key: 'three-view-machine-info',
+    path: 'app/threeview/machine/info',
+    component: lazy(() => import('@renderer/pages/three-view/master/TableMachineInfo')),
+    authority: []
+  },
+  {
+    key: 'three-view-equipmend-daily-inspection-info',
+    path: 'app/threeview/equipment/daily/inspection/info',
+    component: lazy(
+      () => import('@renderer/pages/three-view/machine/TableEquipmentDailyInspectionInfo')
+    ),
+    authority: []
   }
 ]

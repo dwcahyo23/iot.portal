@@ -49,19 +49,13 @@ export default defineConfig({
           changeOrigin: true,
           secure: false,
           rewrite: (path) => path.replace(/^\/mqtt/, '')
+        },
+        '/threeview': {
+          target: 'http://192.168.192.34:8080', // Backend API yang menerima permintaan
+          changeOrigin: true,
+          secure: false,
+          rewrite: (path) => path.replace(/^\/threeview/, '')
         }
-        // '/api/v1': {
-        //   target: 'http://localhost:5001/api/v1',
-        //   changeOrigin: true,
-        //   secure: false,
-        //   rewrite: (path) => path.replace(/^\/api\/v1/, '')
-        // },
-        // '/api/v5': {
-        //   target: 'http://192.168.192.7:18083/api/v5/',
-        //   changeOrigin: true,
-        //   secure: false,
-        //   rewrite: (path) => path.replace(/^\/api\/v5/, '')
-        // }
       }
     }
   }

@@ -2,13 +2,11 @@ import MqttConfig from '@renderer/configs/mqtt.config'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 
 const createMqttService = (): AxiosInstance => {
-  // Membuat instance Axios dengan konfigurasi dasar
   const axiosInstance = axios.create({
-    // baseURL: MqttConfig.apiPrefix, // MqttConfig.apiPrefix akan berisi '/mqtt'
     baseURL: 'http://localhost:5173',
     headers: {
-      Accept: '*/*', // Menambahkan header Accept
-      'Content-Type': 'application/json' // Menambahkan header Content-Type
+      Accept: '*/*',
+      'Content-Type': 'application/json'
     },
     auth: {
       username: MqttConfig.username,

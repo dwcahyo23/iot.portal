@@ -128,6 +128,16 @@ const Portal = () => {
               backgroundColor={hexToRgba(theme.colors.orange[6], 0.8)} // Use the conversion function
             />
           </Grid.Col>
+
+          <Grid.Col span={{ xs: 12, sm: 6, md: 4 }}>
+            <PortalCard
+              title="ThreeView"
+              description="Akses aplikasi Q-Sense Forming"
+              to="/app/threeview/machine/info"
+              icon={<IconTools />}
+              backgroundColor={hexToRgba(theme.colors.indigo[6], 0.8)} // Use the conversion function
+            />
+          </Grid.Col>
         </Grid>
       </Flex>
     </div>

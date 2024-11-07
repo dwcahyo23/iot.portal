@@ -56,6 +56,26 @@ export const portalNavigationConfig: Record<string, PortalState> = {
         authority: ['user', 'admin']
       }
     ]
+  },
+  threeview: {
+    navigation: [
+      {
+        key: 'MasterMachineMaintenance',
+        path: 'app/threeview/machine/info',
+        title: 'Master Machine Maintenance',
+        translateKey: 'Master Machine Maintenance',
+        type: 'title',
+        authority: ['user', 'admin']
+      },
+      {
+        key: 'EquipmentDailyInspectionInfo',
+        path: 'app/threeview/equipment/daily/inspection/info',
+        title: 'Equipment Daily Inspection Info',
+        translateKey: 'Equipment Daily Inspection Info',
+        type: 'title',
+        authority: ['user', 'admin']
+      }
+    ]
   }
   // Add other configurations as needed
 }
